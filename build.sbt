@@ -20,7 +20,7 @@ lazy val example = project
     ),
   )
 
-lazy val commonSettings: List[Def.Setting[_]] = List(
+lazy val commonSettings: List[Def.Setting[_]] = DecentScala.decentScalaSettings ++ List(
   organization := "org.eclipse.che.examples",
   homepage := Some(url("https://github.com/sideeffffect/console-scala-simple")),
   licenses := List("MIT" -> url("https://opensource.org/licenses/MIT")),
@@ -34,6 +34,6 @@ lazy val commonSettings: List[Def.Setting[_]] = List(
   ),
   testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework"),
   mimaReportBinaryIssues := {},
-) ++ DecentScala.decentScalaSettings
+)
 
 addCommandAlias("ci", "; check; +publishLocal")
