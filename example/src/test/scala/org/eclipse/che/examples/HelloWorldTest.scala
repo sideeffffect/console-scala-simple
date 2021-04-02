@@ -12,8 +12,11 @@ import zio.test._
 object HelloWorldTest extends DefaultRunnableSpec {
   def spec: ZSpec[Environment, Failure] =
     suite("HelloWorld.greet")(
-      testM("should say Hello _!") {
+      testM("should say Hello Che!") {
         assertM(HelloWorld.greet("Che"))(equalTo("Hello Che!"))
+      },
+      testM("should say Hello World!") {
+        assertM(HelloWorld.greet("World"))(equalTo("Hello World!"))
       },
     )
 }
