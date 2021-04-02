@@ -1,7 +1,3 @@
-Global / onChangedBuildSource := ReloadOnSourceChanges
-ThisBuild / turbo := true
-ThisBuild / scalaVersion := "2.13.5"
-
 lazy val root = project
   .in(file("."))
   .settings(commonSettings)
@@ -40,4 +36,4 @@ lazy val commonSettings: List[Def.Setting[_]] = List(
   mimaReportBinaryIssues := {},
 ) ++ DecentScala.decentScalaSettings
 
-addCommandAlias("ci", "; check; publishLocal")
+addCommandAlias("ci", "; check; +publishLocal")
